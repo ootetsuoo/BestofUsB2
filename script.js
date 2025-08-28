@@ -17,27 +17,34 @@ function showNextSlide() {
 
 setInterval(showNextSlide, 5000); // Change every 5 seconds
 
-const photos = document.querySelectorAll('.photo');
-const lightbox = document.querySelector('.lightbox');
-const lightboxImg = document.querySelector('.lightbox-img');
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const photos = document.querySelectorAll('.photo');
 
-function openLightbox(src) {
-    lightboxImg.src = src;
-    lightbox.classList.remove('fade-out');
-    lightbox.classList.add('fade-in');
-    lightbox.style.display = 'flex';
-}
+    function openLightbox(src) {
+        lightboxImg.src = src;
+        lightbox.classList.remove('fade-out');
+        lightbox.classList.add('fade-in');
+        lightbox.style.display = 'flex';
+    }
 
-function closeLightbox() {
-    lightbox.classList.remove('fade-in');
-    lightbox.classList.add('fade-out');
-    setTimeout(() => {
-        lightbox.style.display = 'none';
-    }, 300); // Match fadeZoomOut duration
-}
+    function closeLightbox() {
+        lightbox.classList.remove('fade-in');
+        lightbox.classList.add('fade-out');
+        setTimeout(() => {
+            lightbox.style.display = 'none';
+            lightboxImg.src = '';
+        }, 300);
+    }
 
-photos.forEach(img => {
-    img.addEventListener('click', () => openLightbox(img.src));
+    photos.forEach(img => {
+        img.addEventListener('click', () => openLightbox(img.src));
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.classList.contains('lightbox-img')) {
+            closeLightbox();
+        }
+    });
 });
-
-lightbox.addEventListener('click', closeLightbox);

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap");
 
 :root {
     --primary-color: #faacc4;
@@ -21,6 +21,10 @@ body {
     background-color: var(--primary-color);
     color: var(--accent-color);
     overflow-x: hidden;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: minmax(0 1fr);
 }
 
 .navbar {
@@ -55,7 +59,7 @@ body {
     width: 100%;
     background-color: var(--accent-color);
     border-radius: 2px;
-    transition: all .3s ease;
+    transition: all 0.2s ease;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -79,7 +83,8 @@ body {
 .nav-links li a {
     color: var(--accent-color);
     text-decoration: none;
-    transition: color .3s;
+    transition: color 0.2s;
+    text-transform: uppercase;
 }
 
 .nav-links li a:hover {
@@ -111,33 +116,71 @@ body {
     opacity: 1;
 }
 
-.photosContainer {
+.card-section {
     padding: 40px 200px;
-    overflow: hidden;
-    width: 100%;
 }
 
-.photosContainer h1 {
+.card-section h1 {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    padding-bottom: 20px;
 }
 
-.photos {
+.card-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.photos img {
-    width: 30%;
-    padding-bottom: 20px;
-    transition: .3s;
+.card {
+    width: 400px;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    padding: 20px;
+    background-color: var(--secondary-color);
+}
+
+.card-content p {
+    line-height: 1.3;
+}
+
+.card-content .ig-link,
+.card-content .download-photo {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.card-content .ig-link:hover,
+.card-content .download-photo:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    transition: 0.2s;
     cursor: pointer;
 }
 
-.photos img:hover {
-    transform: scale(1.05);
+.card img:hover {
+    opacity: 0.7;
+}
+
+.card-content i {
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .lightbox {
@@ -157,7 +200,7 @@ body {
 .lightbox-img {
     max-width: 90%;
     max-height: 90%;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .close {
@@ -194,28 +237,30 @@ body {
 }
 
 .fade-in {
-    animation: fadeZoomIn .4s ease forwards;
+    animation: fadeZoomIn 0.4s ease forwards;
 }
 
 .fade-out {
-    animation: fadeZoomOut .3s ease forwards;
+    animation: fadeZoomOut 0.3s ease forwards;
 }
 
-.viewAll {
+.view-all {
+    width: fit-content;
     text-decoration: none;
     color: var(--accent-color);
+    transition: 0.2s;
 }
 
-.viewAll p {
+.view-all p {
+    margin-top: 20px;
     text-align: right;
-    transition: .3s;
 }
 
-.viewAll p:hover {
-    opacity: .5;
+.view-all:hover {
+    opacity: 0.5;
 }
 
-.downloadContainer {
+.download-container {
     padding: 40px 200px;
     overflow: hidden;
     width: 100%;
@@ -223,7 +268,7 @@ body {
     color: var(--accent-color);
 }
 
-.downloadContainer h1 {
+.download-container h1 {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
@@ -232,7 +277,7 @@ body {
 
 .download {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
 }
 
@@ -243,7 +288,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 30%;
-    transition: .3s;
+    transition: 0.2s;
 }
 
 .download a:hover {
@@ -270,11 +315,84 @@ footer img {
 .social a {
     text-decoration: none;
     color: var(--secondary-color);
-    transition: .3s;
+    transition: 0.2s;
 }
 
 .social a:hover {
-    opacity: .5;
+    opacity: 0.5;
+}
+
+.b2-photos {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.photo img {
+    width: 100%;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+.buttons i {
+    background-color: var(--secondary-color);
+    font-size: 40px;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.buttons i:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.copyright {
+    padding-bottom: 20px;
+}
+
+.report {
+    border-top: var(--secondary-color) 1px solid;
+    padding: 20px 0 0 0;
+}
+
+.report a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .slideshow {
+        height: 30vh;
+    }
+
+    .slide {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .card-section h1,
+    .download-container h1 {
+        font-size: 1.5em;
+    }
+
+    .download-container {
+        padding: 20px 20px;
+    }
+
+    .download {
+        flex-direction: column;
+    }
+
+    .download a {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -293,7 +411,7 @@ footer img {
         margin: 0;
         opacity: 0;
         transform: translateY(-10px);
-        transition: opacity .3s ease, transform .3s ease;
+        transition: opacity 0.2s ease, transform 0.2s ease;
         pointer-events: none;
     }
 
@@ -312,50 +430,76 @@ footer img {
     }
 
     .slideshow {
-        height: 20vh;
+        height: 50vh;
     }
 
-    .photosContainer {
-        padding: 20px;
+    .card-section {
+        padding: 20px 20px;
     }
 
-    .photosContainer h1 {
-        font-size: 1.5em;
-    }
-
-    .photos {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .photos img {
+    .card {
         width: 100%;
-        margin-bottom: 20px;
     }
 
-    .viewAll p {
-        text-align: center;
-    }
-
-    .downloadContainer {
-        padding: 20px;
-    }
-
-    .downloadContainer h1 {
-        font-size: 1.5em;
-    }
-
-    .download {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .download a {
-        width: 100%;
-        margin-bottom: 20px;
+    .download-container {
+        padding: 20px 20px;
     }
 
     footer {
-        padding: 20px;
+        padding: 20px 20px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .navbar {
+        padding: 20px 50px;
+    }
+
+    .card-section {
+        padding: 40px 50px;
+    }
+
+    .download-container {
+        padding: 40px 50px;
+    }
+
+    footer {
+        padding: 40px 50px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .navbar {
+        padding: 20px 400px;
+    }
+
+    .card-section {
+        padding: 40px 400px;
+    }
+
+    .download-container {
+        padding: 40px 400px;
+    }
+
+    footer {
+        padding: 40px 400px;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 2559px) {
+    .navbar {
+        padding: 20px 100px;
+    }
+
+    .card-section {
+        padding: 40px 100px;
+    }
+
+    .download-container {
+        padding: 40px 100px;
+    }
+
+    footer {
+        padding: 40px 100px;
     }
 }
