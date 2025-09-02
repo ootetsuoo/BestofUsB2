@@ -33,7 +33,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: var(--secondary-color);
-    padding: 20px 200px;
+    padding: 20px 100px;
     color: var(--accent-color);
     z-index: 1000;
 }
@@ -117,7 +117,7 @@ body {
 }
 
 .card-section {
-    padding: 40px 200px;
+    padding: 40px 100px;
 }
 
 .card-section h1 {
@@ -176,11 +176,6 @@ body {
 
 .card img:hover {
     opacity: 0.7;
-}
-
-.card-content i {
-    font-size: 24px;
-    cursor: pointer;
 }
 
 .lightbox {
@@ -261,7 +256,7 @@ body {
 }
 
 .download-container {
-    padding: 40px 200px;
+    padding: 40px 100px;
     overflow: hidden;
     width: 100%;
     background-color: var(--secondary-color);
@@ -299,7 +294,7 @@ body {
 footer {
     background-color: var(--accent-color);
     color: var(--secondary-color);
-    padding: 40px 200px;
+    padding: 40px 100px;
     text-align: center;
 }
 
@@ -365,39 +360,30 @@ footer img {
     text-decoration: underline;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
-
-    .slideshow {
-        height: 30vh;
-    }
-
-    .slide {
-        width: 100%;
-        height: fit-content;
-    }
-
-    .card-section h1,
-    .download-container h1 {
-        font-size: 1.5em;
-    }
-
-    .download-container {
-        padding: 20px 20px;
-    }
-
-    .download {
-        flex-direction: column;
-    }
-
-    .download a {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+.back-to-top {
+    text-decoration: none;
+    color: var(--secondary-color);
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+.back-to-top p {
+    margin-top: 20px;
+}
+
+.back-to-top:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
     .navbar {
-        padding: 20px 20px;
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 1.2em;
+    }
+
+    .hamburger {
+        display: flex;
     }
 
     .nav-links {
@@ -421,85 +407,92 @@ footer img {
         pointer-events: auto;
     }
 
-    .hamburger {
-        display: flex;
-    }
-
     .nav-links li {
-        margin: 10px 0;
+        margin-bottom: 10px;
     }
 
     .slideshow {
-        height: 50vh;
+        height: 30vh;
     }
 
     .card-section {
-        padding: 20px 20px;
+        padding: 40px 20px;
+    }
+
+    .card-section h1 {
+        font-size: 1.5em;
     }
 
     .card {
         width: 100%;
     }
 
-    .download-container {
-        padding: 20px 20px;
+    .card-content h3 {
+        font-size: 1.2em;
     }
 
-    footer {
-        padding: 20px 20px;
-    }
-}
-
-@media (min-width: 1024px) and (max-width: 1439px) {
-    .navbar {
-        padding: 20px 50px;
+    .card-content p {
+        font-size: 0.9em;
     }
 
-    .card-section {
-        padding: 40px 50px;
+    .card-content .ig-link,
+    .card-content .download-photo {
+        font-size: 0.9em;
     }
 
     .download-container {
-        padding: 40px 50px;
+        padding: 40px 20px;
+    }
+
+    .download-container h1 {
+        font-size: 1.5em;
+    }
+
+    .download {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .download a {
+        width: 100%;
+        font-size: 0.9em;
     }
 
     footer {
-        padding: 40px 50px;
+        padding: 20px;
+    }
+
+    .buttons i {
+        font-size: 30px;
+    }
+
+    .copyright {
+        font-size: 0.9em;
+    }
+
+    .report {
+        font-size: 0.9em;
+    }
+
+    .back-to-top p {
+        font-size: 0.9em;
     }
 }
 
 @media (min-width: 2560px) {
     .navbar {
-        padding: 20px 400px;
+        padding: 20px 300px;
     }
 
     .card-section {
-        padding: 40px 400px;
+        padding: 40px 300px;
     }
 
     .download-container {
-        padding: 40px 400px;
+        padding: 40px 300px;
     }
 
     footer {
-        padding: 40px 400px;
-    }
-}
-
-@media (min-width: 1440px) and (max-width: 2559px) {
-    .navbar {
-        padding: 20px 100px;
-    }
-
-    .card-section {
-        padding: 40px 100px;
-    }
-
-    .download-container {
-        padding: 40px 100px;
-    }
-
-    footer {
-        padding: 40px 100px;
+        padding: 40px 300px;
     }
 }
