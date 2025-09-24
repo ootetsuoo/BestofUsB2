@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Nata+Sans:wght@100..900&family=Oranienbaum&display=swap');
 
 :root {
     --primary-color: #faacc4;
@@ -33,14 +33,22 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: var(--secondary-color);
-    padding: 20px 100px;
+    padding: 20px 200px;
     color: var(--accent-color);
     z-index: 1000;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .logo {
+    font-family: "Oranienbaum", serif;
     font-size: 1.5em;
     font-weight: bold;
+    cursor: default;
+    transition: 0.2s;
+}
+
+.logo:hover {
+    scale: 1.05;
 }
 
 .hamburger {
@@ -83,47 +91,55 @@ body {
 .nav-links li a {
     color: var(--accent-color);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: 0.2s;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .nav-links li a:hover {
     color: var(--primary-color);
 }
 
-.slideshow {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
-    opacity: 1;
-}
-
-.card-section {
-    padding: 40px 100px;
-}
-
-.card-section h1 {
+.countdown {
+    background-color: var(--secondary-color);
     text-align: center;
+    padding: 20px 0;
+    cursor: default;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timer-label {
+    font-family: 'Oranienbaum', serif;
+}
+
+#timer {
+    background-color: var(--accent-color);
+    width: fit-content;
+    color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.banner {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.photos-ig {
+    padding: 0 200px;
+}
+
+.photos-ig h1 {
+    font-family: "Oranienbaum", serif;
     text-transform: uppercase;
-    font-weight: bold;
+    margin: 0 0 20px 0;
 }
 
 .card-container {
@@ -134,7 +150,7 @@ body {
 
 .card {
     width: 400px;
-    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -156,7 +172,7 @@ body {
     text-decoration: none;
     background-color: var(--accent-color);
     color: var(--secondary-color);
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 10px;
     transition: 0.2s;
 }
@@ -178,6 +194,28 @@ body {
     opacity: 0.7;
 }
 
+.view-more {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: .2s;
+}
+
+.view-more p {
+    text-align: center;
+    margin: 0 auto 20px auto;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+    transition: .2s;
+}
+
+
+.view-more p:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+}
+
 .lightbox {
     display: none;
     position: fixed;
@@ -186,8 +224,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* background: rgba(0, 0, 0, 0.9); */
-    background-color: var(--accent-color);
+    background: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
 }
@@ -196,15 +233,6 @@ body {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
-}
-
-.close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
 }
 
 @keyframes fadeZoomIn {
@@ -232,145 +260,92 @@ body {
 }
 
 .fade-in {
-    animation: fadeZoomIn 0.4s ease forwards;
+    animation: fadeZoomIn 0.2s ease forwards;
 }
 
 .fade-out {
-    animation: fadeZoomOut 0.3s ease forwards;
-}
-
-.view-all {
-    width: fit-content;
-    text-decoration: none;
-    color: var(--accent-color);
-    transition: 0.2s;
-}
-
-.view-all p {
-    margin-top: 20px;
-    text-align: right;
-}
-
-.view-all:hover {
-    opacity: 0.5;
-}
-
-.download-container {
-    padding: 40px 100px;
-    overflow: hidden;
-    width: 100%;
-    background-color: var(--secondary-color);
-    color: var(--accent-color);
-}
-
-.download-container h1 {
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding-bottom: 20px;
-}
-
-.download {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.download a {
-    text-decoration: none;
-    color: var(--secondary-color);
-    background-color: var(--accent-color);
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
-    transition: 0.2s;
-}
-
-.download a:hover {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
+    animation: fadeZoomOut 0.2s ease forwards;
 }
 
 footer {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-    padding: 40px 100px;
-    text-align: center;
-}
-
-footer img {
-    width: 100px;
-}
-
-.social {
-    font-size: 40px;
-    padding-bottom: 20px;
-}
-
-.social a {
-    text-decoration: none;
-    color: var(--secondary-color);
-    transition: 0.2s;
-}
-
-.social a:hover {
-    opacity: 0.5;
-}
-
-.b2-photos {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    padding: 20px 200px;
     display: flex;
-    justify-content: center;
-    padding-bottom: 20px;
+    justify-content: space-between;
 }
 
-.photo img {
-    width: 100%;
+.about {
+    text-align: left;
 }
 
-.buttons a {
+.footer-logo {
+    width: 150px;
+    cursor: default;
+    transition: .2s;
+}
+
+.footer-logo:hover {
+    scale: 1.05;
+}
+
+.about h1 {
+    font-family: "Oranienbaum", serif;
+    cursor: default;
+    transition: .2s;
+}
+
+.about h1:hover {
+    scale: 1.05;
+}
+
+.socials {
+    text-align: right;
+}
+
+.socials h1 {
+    font-family: "Oranienbaum", serif;
+    text-transform: uppercase;
+}
+
+.socials a {
     text-decoration: none;
     color: var(--accent-color);
+    transition: .2s;
 }
 
-.buttons i {
-    background-color: var(--secondary-color);
+.socials i {
     font-size: 40px;
-    cursor: pointer;
-    padding: 20px;
-    width: 100%;
-    transition: 0.2s;
+    margin: 20px 0;
+    transition: .2s;
 }
 
-.buttons i:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
+.socials i:hover {
+    color: var(--primary-color);
 }
 
-.copyright {
-    padding-bottom: 20px;
-}
-
-.report {
-    border-top: var(--secondary-color) 1px solid;
-    padding: 20px 0 0 0;
-}
-
-.report a {
-    color: var(--secondary-color);
-    text-decoration: underline;
-}
-
-.back-to-top {
-    text-decoration: none;
-    color: var(--secondary-color);
-}
-
-.back-to-top p {
+.version {
     margin-top: 20px;
+    border-top: 1px solid var(--accent-color);
+    padding: 10px 0;
 }
 
-.back-to-top:hover {
+.report:hover {
     text-decoration: underline;
+}
+
+.page {
+    padding: 20px 200px;
+}
+
+.page-title {
+    font-family: "Oranienbaum", serif;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.card-container_photo-page {
+    padding: 0 200px;
 }
 
 @media (max-width: 768px) {
@@ -411,16 +386,21 @@ footer img {
         margin-bottom: 10px;
     }
 
-    .slideshow {
-        height: 30vh;
+    .timer-label {
+        font-size: 0.9em;
     }
 
-    .card-section {
-        padding: 40px 20px;
+    #timer {
+        font-size: 0.9em;
     }
 
-    .card-section h1 {
+    .photos-ig {
+        padding: 0 20px;
+    }
+
+    .photos-ig h1 {
         font-size: 1.5em;
+        text-align: center;
     }
 
     .card {
@@ -435,34 +415,44 @@ footer img {
         font-size: 0.9em;
     }
 
-    .card-content .ig-link,
-    .card-content .download-photo {
+    .ig-link,
+    .download-photo {
         font-size: 0.9em;
     }
 
-    .download-container {
-        padding: 40px 20px;
-    }
-
-    .download-container h1 {
-        font-size: 1.5em;
-    }
-
-    .download {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .download a {
-        width: 100%;
+    .view-more p {
         font-size: 0.9em;
     }
 
     footer {
         padding: 20px;
+        flex-direction: column;
     }
 
-    .buttons i {
+    .about,
+    .socials {
+        text-align: center;
+    }
+
+    .about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-logo {
+        width: 120px;
+    }
+
+    .about h1 {
+        font-size: 1.2em;
+    }
+
+    .socials h1 {
+        font-size: 1.2em;
+    }
+
+    .socials i {
         font-size: 30px;
     }
 
@@ -470,29 +460,64 @@ footer img {
         font-size: 0.9em;
     }
 
+    .version {
+        font-size: 0.9em;
+    }
+
     .report {
         font-size: 0.9em;
     }
 
-    .back-to-top p {
-        font-size: 0.9em;
+    .page {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card-container_photo-page {
+        padding: 0 20px;
     }
 }
 
-@media (min-width: 2560px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
     .navbar {
-        padding: 20px 300px;
+        padding: 20px 50px;
     }
 
-    .card-section {
-        padding: 40px 300px;
+    .photos-ig {
+        padding: 0 50px;
     }
 
-    .download-container {
-        padding: 40px 300px;
+    .card-container_photo-page {
+        padding: 0 50px;
     }
 
     footer {
-        padding: 40px 300px;
+        padding: 20px 50px;
+    }
+
+    .page {
+        padding: 20px 50px;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .navbar {
+        padding: 20px 100px;
+    }
+
+    .photos-ig {
+        padding: 0 100px;
+    }
+
+    .card-container_photo-page {
+        padding: 0 100px;
+    }
+
+    footer {
+        padding: 20px 100px;
+    }
+
+    .page {
+        padding: 20px 100px;
     }
 }
