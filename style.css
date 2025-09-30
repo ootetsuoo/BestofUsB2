@@ -348,6 +348,22 @@ footer {
     padding: 0 200px;
 }
 
+.coming-soon {
+    text-align: center;
+    height: 30vh;
+    cursor: default;
+    transition: .2s;
+}
+
+.coming-soon h1 {
+    font-size: 50px;
+    transition: .2s;
+}
+
+.coming-soon h1:hover {
+    scale: 1.05;
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 20px;
@@ -500,7 +516,7 @@ footer {
     }
 }
 
-@media (min-width: 1440px) and (max-width: 1919px) {
+/* @media (min-width: 1440px) and (max-width: 1919px) {
     .navbar {
         padding: 20px 100px;
     }
@@ -520,4 +536,4 @@ footer {
     .page {
         padding: 20px 100px;
     }
-}
+} */
