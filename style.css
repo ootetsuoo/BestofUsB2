@@ -33,10 +33,10 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: var(--secondary-color);
-    padding: 20px 200px;
+    padding: 20px 125px;
     color: var(--accent-color);
     z-index: 1000;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -133,7 +133,7 @@ body {
 }
 
 .photos-ig {
-    padding: 0 200px;
+    padding: 0 125px;
 }
 
 .photos-ig h1 {
@@ -270,7 +270,7 @@ body {
 footer {
     background-color: var(--secondary-color);
     color: var(--accent-color);
-    padding: 20px 200px;
+    padding: 20px 125px;
     display: flex;
     justify-content: space-between;
 }
@@ -280,7 +280,7 @@ footer {
 }
 
 .footer-logo {
-    width: 150px;
+    width: 100px;
     cursor: default;
     transition: .2s;
 }
@@ -335,7 +335,7 @@ footer {
 }
 
 .page {
-    padding: 20px 200px;
+    padding: 20px 125px;
 }
 
 .page-title {
@@ -345,7 +345,7 @@ footer {
 }
 
 .card-container_photo-page {
-    padding: 0 200px;
+    padding: 0 125px;
 }
 
 .coming-soon {
@@ -457,7 +457,7 @@ footer {
     }
 
     .footer-logo {
-        width: 120px;
+        width: 75px;
     }
 
     .about h1 {
@@ -491,6 +491,10 @@ footer {
 
     .card-container_photo-page {
         padding: 0 20px;
+    }
+
+    .coming-soon h1 {
+        font-size: 30px;
     }
 }
 
